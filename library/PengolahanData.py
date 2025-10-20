@@ -70,9 +70,21 @@ plt.xlabel("Nama Siswa")
 plt.ylabel("Rata-rata Nilai")
 plt.ylim(0, 100)
 plt.show()
-"""
+
+# bisa tapi lebih ribet
 max_rata = np.max(df_nilai[["rata-rata"]])
 
 # Find the student with the highest average score
 max_student = df_nilai.loc[df_nilai['rata-rata'] == max_rata, 'Nama'].values[0]
 print(f"Student with highest average score: {max_student}")
+
+"""
+
+# Cari index (posisi baris) di mana nilai 'rata-rata' paling tinggi
+idx_max = df_nilai['rata-rata'].idxmax()
+
+# Gunakan .loc untuk mengambil seluruh data siswa di index tersebut
+siswa_terbaik = df_nilai.loc[idx_max]
+
+print("Informasi Siswa Terbaik:")
+print(siswa_terbaik)
