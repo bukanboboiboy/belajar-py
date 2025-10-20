@@ -21,13 +21,17 @@ data_user = {
     "umur": umur
 }
 
+"""
 filepath_json = os.path.join(folder, "user_data.json")
+filepath_pickle = os.path.join(folder, "user_data.pkl")
+
+"""
+filepath_json = os.path.join(folder, f"{nama.lower()}.json")
+filepath_pickle = os.path.join(folder, f"{nama.lower()}.pkl")
 
 with open(filepath_json, 'w') as json_file:
     json.dump(data_user, json_file)
     print(f"Data user disimpan dalam format JSON di {filepath_json}.")
-
-filepath_pickle = os.path.join(folder, "user_data.pkl")
 
 with open(filepath_pickle, 'wb') as pickle_file:
     pickle.dump(data_user, pickle_file)

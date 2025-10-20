@@ -22,7 +22,7 @@ if os.path.exists(folder):
                     data = pickle.load(file)
                     print(
                         f"Nama: {
-                            data['nama']}, Email: {
+                            data['nama']},Email: {
                             data['email']}, Umur: {
                             data['umur']}")
                 except Exception as e:
